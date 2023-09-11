@@ -1,0 +1,14 @@
+CREATE TABLE file (AGE, NAME, PHONE, ID);
+INSERT INTO file (AGE, NAME, PHONE, ID) VALUES ('18','pooria','0123','0000');
+INSERT INTO file VALUES ('20','pooria','0123','0000');
+INSERT INTO file VALUES ('13','mahdis','1234','0001');
+INSERT INTO file VALUES ('13','abcsde','1234','0201');
+INSERT INTO file VALUES ('13','asdqev','1234','0501');
+INSERT INTO file VALUES ('59','behnam','2345','0005');
+INSERT INTO file VALUES ('46','abcdss','3456','0004');
+INSERT INTO file VALUES ('13','rezaee','6789','0010');
+INSERT INTO file VALUES ('99','babaee','4567','0007');
+INSERT INTO file VALUES ('78','mohamd','5678','0002');
+SELECT * FROM file;
+UPDATE file SET ID = '85' WHERE AGE = '13';
+SELECT AVG(ID) FROM file;

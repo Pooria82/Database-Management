@@ -1,0 +1,5 @@
+Insert Into :
+INSERT\s+INTO\s+\w+\s*\((\s*\w+\s*,?\s*)+\)\s*VALUES\s*\(\s*((\s*\w+\s*|\s*'[^']*'\s*|\s*\d+\s*|\s*NULL\s*),?\s*)+\s*\)
+
+
+^\s*(\w+\s*(=|regexp|like)\s*'[^']*'){1}(\s*(and|or)\s+\w+\s*(=|regexp|like)\s*'[^']*'\s*)*\s*$

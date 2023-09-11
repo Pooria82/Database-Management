@@ -1,0 +1,80 @@
+
+1.1 CREATE TABLE
+CREATE TABLE table_name (column1,column2,column3,...);
+CREATE TABLE Person (PersonID,LastName,FirstName,Address,City);
+CREATE TABLE pooria (AGE, NAME, PHONE, ID);
+
+1.2 DROP TABLE
+DROP TABLE table_name
+DROP TABLE persons
+
+INSERT INTO
+3.1 
+INSERT INTO table_name (column1,column2,column3,...) VALUES ('value1','value2','value3',...)
+INSERT INTO Customers (CustomerName, ContactName, Address, City, PostalCode, Country) VALUES ('Cardinal','Tom B. Erichsen','Skagen 21','Stavanger','4006','Norway');
+insert into pooria (AGE, NAME, PHONE, ID) VALUES(  '25 ' , 'REZA','123456789','1382') ;
+3.1.1
+INSERT INTO table_name VALUES ('value1','value2','value3',...)
+INSERT INTO Shippers VALUES ('10', 'nima', '987654321');
+
+2.1 SELECT -> show
+SELECT column1,column2,... FROM table_name;
+SELECT CustomerName, City, Country FROM Customers ;
+2.2	AS
+SELECT column_name AS alias_name FROM table_name;
+SELECT CustomerID AS ID, CustomerName AS Customer FROM Customers;
+2.3	WHERE
+SELECT column1, column2, ... FROM table_name WHERE condition;
+SELECT * FROM Customers WHERE Country='Mexico';
+2.4 (AND)
+SELECT column1, column2, ... FROM table_name WHERE condition1 AND condition2 AND condition3 ...;
+SELECT * FROM Customers WHERE Country = 'Germany' AND City = 'Berlin';
+2.5 (OR)
+SELECT column1, column2, ... FROM table_name WHERE condition1 OR condition2 OR condition3 ...;
+SELECT * FROM Customers WHERE City = 'Berlin' OR City = 'Stuttgart';
+2.6 (NOT)
+SELECT column1, column2, ... FROM table_name WHERE NOT condition;
+SELECT * FROM Customers WHERE NOT Country = 'Germany';
+2.7 (Combining AND, OR and NOT)
+SELECT * FROM Customers WHERE Country = 'Germany' AND (City = 'Berlin' OR City = 'Stuttgart');
+SELECT * FROM Customers WHERE Country = 'Germany' AND (City = 'Berlin' OR City = 'Stuttgart' AND NOT((AGE=18 AND NAME=ALI)OR(AGE=32 AND NAME=MOHAMAD) AND  CITY =IRAN));
+
+4.1	UPDATE
+UPDATE table_name SET column1 = value1, column2 = value2 ... ,WHERE condition ;
+
+UPDATE Customers SET ContactName = 'Alfred Schmidt', City = 'Frankfurt' WHERE CustomerID = 1;
+UPDATE Customers SET PostalCode = 00000 WHERE Country = 'Mexico';
+UPDATE Customers SET PostalCode = 00000;
+
+5.1	DELETE FROM
+DELETE FROM table_name WHERE condition;
+
+DELETE FROM Customers WHERE CustomerName='Alfreds Futterkiste';
+DELETE FROM Customers;
+
+Aggregate Functions:
+
+6.1	COUNT
+SELECT COUNT(column_name) FROM table_name WHERE condition;
+SELECT COUNT(ProductID) FROM Products;
+6.2	AVG
+SELECT AVG(column_name) FROM table_name;
+SELECT AVG(Price) FROM Products;
+6.3	SUM
+SELECT SUM(column_name) FROM table_name WHERE condition;
+SELECT SUM(Quantity) FROM OrderDetails;
+
+7.1	LIKE
+SELECT column1, column2 ... ,FROM table_name WHERE columnN LIKE pattern;
+SELECT * FROM Customers WHERE CustomerName LIKE '%a';
+7.2	REGEXP
+SELECT * FROM table_name WHERE column REGEXP pattern;
+SELECT * FROM author WHERE aut_name REGEXP '^w';
+
+8.1	ORDER BY
+SELECT column1, column2, ... FROM table_name ORDER BY column1, column2, ... ASC|DESC;
+SELECT * FROM Customers ORDER BY Country;
+
++++
+
+
